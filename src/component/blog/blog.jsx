@@ -28,12 +28,12 @@ const blog = ({blog, handleBookmark,markasRead}) => {
      <p>{blog.description}</p>
      <div className='flex'>
             {
-      blog.hastag.map((has)=><p>{has}</p>)
+      blog.hastag.map((has)=><p key={has}>{has}</p>)
      }
      </div>
     
     <div className="card-actions justify-end">
-      <button onClick={()=>markasRead(blog.reading_time)} className="btn btn-primary">Mark as read</button>
+      <button onClick={()=>markasRead(blog.reading_time,blog.id)} className="btn btn-primary">Mark as read</button>
     </div>
   </div>
         </div>

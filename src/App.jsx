@@ -11,12 +11,15 @@ const handleBookmark=(blog)=>{
   setBookmarked([...bookmarked,blog])
 
 }
-const markasRead=(time)=>{
+const markasRead=(time,id)=>{
   setreadingCount(readingCount+time)
-
+  handleremovebookmark(id)
 }
-console.log(readingCount)
 
+const handleremovebookmark=(id)=>{
+const remainBookmark=bookmarked.filter((mark)=>mark.id!==id)
+setBookmarked(remainBookmark)
+}
   return (
     <>
    <Navbar></Navbar>
@@ -30,7 +33,7 @@ console.log(readingCount)
          <h1>Reading time :{readingCount}</h1>
          <h1>BookMark Count:{bookmarked.length}</h1>
          {
-          bookmarked.map(marked => <p>{marked.name}</p>)
+          bookmarked.map(marked => <p key={marked.id} className='bg-red-400 shadow m-2 text-white'>{marked.name}</p>)
          }
         </div>
     </div>
