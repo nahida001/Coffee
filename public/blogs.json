@@ -10,7 +10,8 @@
     "hastag":[
         "beginers",
         "es6"
-    ]
+    ],
+    "reading_time":6
   },
   {
     "id": 2,
@@ -22,7 +23,9 @@
      "hastag":[
         "javascript",
         "coding"
-    ]
+    ],
+
+    "reading_time":5
   },
   {
     "id": 3,
@@ -34,7 +37,8 @@
      "hastag":[
         "beginers",
         "es6"
-    ]
+    ],
+    "reading_time":2
   },
 
   {
@@ -47,6 +51,7 @@
      "hastag":[
         "beginers",
         "es6"
-    ]
+    ],
+    "reading_time":1
   }
 ]

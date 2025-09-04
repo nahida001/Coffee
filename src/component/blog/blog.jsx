@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaBookmark } from "react-icons/fa";
-const blog = ({blog}) => {
+const blog = ({blog, handleBookmark,markasRead}) => {
    //const {blog}=props
+    //console.log(handleBookmark)
    console.log(blog)
+  
     return (
         <div className='m-2'>
            
@@ -19,7 +21,8 @@ const blog = ({blog}) => {
           <img className='w-16 rounded-full ...' src={blog.author_image}
      />
       <h3>{blog.author_name}</h3>
-      <FaBookmark size={25} />
+     <button onClick={()=>handleBookmark(blog)}><FaBookmark size={25} />
+      </button> 
     </div>
      <h2 className="card-title">{blog.name}</h2>
      <p>{blog.description}</p>
@@ -30,7 +33,7 @@ const blog = ({blog}) => {
      </div>
     
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Mark as read</button>
+      <button onClick={()=>markasRead(blog.reading_time)} className="btn btn-primary">Mark as read</button>
     </div>
   </div>
         </div>

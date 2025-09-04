@@ -1,9 +1,21 @@
 import Navbar from './component/nabvar/navbar'
 import Blogs from './component/blogs/blogs'
 import './App.css'
+import { useState } from 'react'
 
 function App() {
-  
+ const [bookmarked,setBookmarked] = useState([])
+const[readingCount,setreadingCount]=useState(0)
+const handleBookmark=(blog)=>{
+  //console.log(blog)
+  setBookmarked([...bookmarked,blog])
+
+}
+const markasRead=(time)=>{
+  setreadingCount(readingCount+time)
+
+}
+console.log(readingCount)
 
   return (
     <>
@@ -12,11 +24,14 @@ function App() {
     <div class="main-container flex text-center">
         <div class="right-container w-[70%]">
         
-       <Blogs></Blogs>
+       <Blogs handleBookmark={handleBookmark} markasRead={markasRead}></Blogs>
         </div>
         <div class="left-container w-[30%]">
-         <h1>Reading time :0</h1>
-         <h1>BookMark Count:0</h1>
+         <h1>Reading time :{readingCount}</h1>
+         <h1>BookMark Count:{bookmarked.length}</h1>
+         {
+          bookmarked.map(marked => <p>{marked.name}</p>)
+         }
         </div>
     </div>
     </>
